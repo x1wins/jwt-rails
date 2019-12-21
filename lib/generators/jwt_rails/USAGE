@@ -2,7 +2,7 @@ Description:
     Explain the generator
 
 Example:
-    rails generate jwt_rails Thing
+    rails generate jwt_rails
 
     This will create:
         what/will/it/create
