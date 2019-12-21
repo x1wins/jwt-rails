@@ -1,5 +1,5 @@
 class JwtRailsGenerator < Rails::Generators::Base
-#  source_root File.expand_path('templates', __dir__)
+ source_root File.expand_path('templates', __dir__)
   
   def copy_file
     # Use Json Web Token (JWT) for token based authentication
@@ -20,6 +20,8 @@ class JwtRailsGenerator < Rails::Generators::Base
     copy_file "users_controller.rb", "app/controllers/users_controller.rb"
     generate "controller", "authentication"
     copy_file "authentication_controller.rb", "app/controllers/authentication_controller.rb"
+
+    rake "db:migrate"
   end
 
 end
