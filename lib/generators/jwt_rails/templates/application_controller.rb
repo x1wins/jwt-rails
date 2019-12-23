@@ -1,3 +1,5 @@
+require 'json_web_token'
+
 class ApplicationController < ActionController::API
 
   def not_found
@@ -16,4 +18,20 @@ class ApplicationController < ActionController::API
       render json: { errors: e.message }, status: :unauthorized
     end
   end
+
+  def is_owner user_id
+    unless user_id == current_user.id
+      render json: nil, status: :forbidden
+      return
+    end
+  end
+
+  def is_owner_object data
+    if data.nil? or data.user_id.nil?
+      return render status: :not_found
+    else
+      is_owner data.user_id
+    end
+  end
+
 end

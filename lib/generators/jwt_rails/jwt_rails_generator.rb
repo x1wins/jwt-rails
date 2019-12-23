@@ -21,7 +21,7 @@ class JwtRailsGenerator < Rails::Generators::Base
     generate "controller", "authentication"
     copy_file "authentication_controller.rb", "app/controllers/authentication_controller.rb"
 
-    puts "hello world"
+    puts "Genenrate Finish"
   end
 
 end

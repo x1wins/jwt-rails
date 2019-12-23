@@ -1,5 +1,5 @@
 Description:
-    Explain the generator
+    JWT, user resource for Auth rest api generator
 
 Example:
     rails generate jwt_rails
