@@ -79,12 +79,25 @@ https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248
         ```bash
           rails g scaffold post body:string user:references published:boolean
         ```
-    2. Insert ```before_action :authorize_request``` code into Controller
-        ```bash
+    2. Authenticate 
+        Insert ```before_action :authorize_request``` code into Controller
+        ```ruby
           class PostsController < ApplicationController
             before_action :authorize_request
             
             //...other code
             
+          end
+        ```
+    3. Authorize
+        https://stackoverflow.com/questions/17594939/check-if-current-user-is-the-owner-of-a-resource-and-allow-edit-delete-actions/57279448#57279448
+        Insert ```is_owner_object``` code into Controller
+        ```ruby
+          class PostsController < ApplicationController
+            before_action :authorize_request
+            before_action only: [:edit, :update, :destroy] do
+                is_owner_object @post ##your object
+            end
+            //...other code
           end
         ```
