@@ -9,6 +9,10 @@ Gem::Specification.new do |s|
   s.files        = Dir.glob("{lib}/**/*") + %w(README.md)
   s.require_paths = ["lib"]
   s.add_development_dependency 'rails', '~> 3.2.0'
-  s.homepage    = "https://github.com/x1wins/docker-postgres-rails"
+  s.homepage    = "https://github.com/x1wins/jwt-rails"
+  s.metadata = {
+      "homepage_uri"      => "https://www.changwoo.org",
+      "source_code_uri"   => "https://github.com/x1wins/jwt-rails"
+  }
   s.license     = "MIT"
 end
