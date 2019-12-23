@@ -45,34 +45,11 @@ https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248 <br/>
             ```bash
             curl -X GET -i http://localhost:3000/posts
             HTTP/1.1 401 Unauthorized
-            X-Frame-Options: SAMEORIGIN
-            X-XSS-Protection: 1; mode=block
-            X-Content-Type-Options: nosniff
-            X-Download-Options: noopen
-            X-Permitted-Cross-Domain-Policies: none
-            Referrer-Policy: strict-origin-when-cross-origin
-            Content-Type: application/json; charset=utf-8
-            Cache-Control: no-cache
-            X-Request-Id: 4dd54eac-e047-4cd6-acf1-1a65a7892bb2
-            X-Runtime: 0.004087
-            Transfer-Encoding: chunked
             ```
         2. Success Case
             ```bash
             curl -X GET -i http://localhost:3000/posts -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NzcyMjkwOTl9.an-cp7gWzEuufwvWPo3SFXzpxL_G1wvNpm6g7W_gdQU"
             HTTP/1.1 200 OK
-            X-Frame-Options: SAMEORIGIN
-            X-XSS-Protection: 1; mode=block
-            X-Content-Type-Options: nosniff
-            X-Download-Options: noopen
-            X-Permitted-Cross-Domain-Policies: none
-            Referrer-Policy: strict-origin-when-cross-origin
-            Content-Type: application/json; charset=utf-8
-            ETag: W/"4f53cda18c2baa0c0354bb5f9a3ecbe5"
-            Cache-Control: max-age=0, private, must-revalidate
-            X-Request-Id: b7ba9e96-bf9b-494e-81c6-f4b187751611
-            X-Runtime: 0.016433
-            Transfer-Encoding: chunked
             ```
     
 4. Scaffold Example 
