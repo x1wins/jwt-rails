@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
-  s.name        = "docker-postgres-rails"
+  s.name        = "jwt-rails"
   s.version     = "0.0.1"
-  s.date        = "2019-12-19"
+  s.date        = "2019-12-23"
   s.summary     = "JWT, user resource for Auth rest api generator"
   s.description = "Generate JWT, User model, controller"
   s.authors     = ["Chang-Woo Rhee"]
