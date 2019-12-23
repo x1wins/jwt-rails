@@ -1,9 +1,9 @@
 # README
-jwt-rails project developed for helping Authenticate your rails rest-api project
-you can fast develop project with jwt-rails
-I used reference following websites
-https://guides.rubyonrails.org/generators.html#creating-generators-with-generators
-https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248
+jwt-rails project developed for helping Authenticate your rails rest-api project<br/>
+you can fast develop project with jwt-rails<br/>
+I used reference following websites<br/>
+https://guides.rubyonrails.org/generators.html#creating-generators-with-generators <br/>
+https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248 <br/>
 
 ## Require
 * You don't have User Model, It will generate User Model
@@ -38,7 +38,7 @@ https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248
             "username": "helloworld"
           }
         ```
-    3. Token Usage
+    3. Token Usage <br/>
         If you have Post scaffold. you can use following curl command 
         1. Fail Case - Wrong token
             ```bash
@@ -89,8 +89,8 @@ https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248
             
           end
         ```
-    3. Authorize
-        https://stackoverflow.com/questions/17594939/check-if-current-user-is-the-owner-of-a-resource-and-allow-edit-delete-actions/57279448#57279448
+    3. Authorize <br/>
+        https://stackoverflow.com/questions/17594939/check-if-current-user-is-the-owner-of-a-resource-and-allow-edit-delete-actions/57279448#57279448 <br/>
         Insert ```is_owner_object``` code into Controller
         ```ruby
           class PostsController < ApplicationController
