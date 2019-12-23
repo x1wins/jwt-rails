@@ -25,6 +25,22 @@ https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248
     ```
 
 3. Endpoint
+    1. Create User
     ```bash
-      curl -d '{"name":"ChangWoo", "username":"helloworld", "email":"x1wins@changwoo.org", "password":"hello1234", "password_confirmation":"hello1234", }' -H "Content-Type: application/json" -X POST -i http://localhost:3000/users
+      curl -d '{"name":"ChangWoo", "username":"helloworld", "email":"x1wins@changwoo.org", "password":"hello1234", "password_confirmation":"hello1234"}' -H "Content-Type: application/json" -X POST -i http://localhost:3000/users
     ```
+    
+4. Scaffold Example 
+    1. Use ```user:references``` in scaffold code 
+        ```bash
+          rails g scaffold post body:string user:references published:boolean
+        ```
+    2. Insert ```before_action :authorize_request``` code into Controller
+        ```bash
+          class PostsController < ApplicationController
+            before_action :authorize_request
+            
+            //...other code
+            
+          end
+        ```
