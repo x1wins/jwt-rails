@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   before_action :authorize_request, except: :create
-  before_action only: [:update, :destroy] do
-    is_owner_object @post ##your object
-  end
   before_action :find_user, except: %i[create index]
+  before_action only: [:show, :update, :destroy] do
+    is_owner_object @user ##your object
+  end
 
   # GET /users
   def index
