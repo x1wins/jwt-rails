@@ -1,0 +1,8 @@
+Description:
+    JWT, user resource for Auth rest api generator
+
+Example:
+    rails generate jwt_rails
+
+    This will create:
+        what/will/it/create
