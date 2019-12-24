@@ -82,7 +82,8 @@ https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248 <br/>
         
 
 ## Contribute
-    ```bash
-    gem build jwt-rails.gemspec
-    gem install jwt-rails-0.0.1.gem
-    ```
+How to build gem
+```bash
+gem build jwt-rails.gemspec
+gem install jwt-rails-0.0.1.gem
+```
