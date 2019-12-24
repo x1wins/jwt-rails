@@ -6,7 +6,7 @@ https://guides.rubyonrails.org/generators.html#creating-generators-with-generato
 https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248 <br/>
 
 ## Require
-* rails api only project ```rails new my_api --api```
+* rails api only project ```rails new my_api --api``` https://guides.rubyonrails.org/api_app.html
 * You don't have User Model, It will generate User Model
 * 'rails', '~> 3.2.0'
 
@@ -58,7 +58,7 @@ https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248 <br/>
         ```bash
           rails g scaffold post body:string user:references published:boolean
         ```
-    2. Authenticate 
+    2. Authenticate <br/>
         Insert ```before_action :authorize_request``` code into Controller
         ```ruby
           class PostsController < ApplicationController
@@ -70,16 +70,32 @@ https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248 <br/>
         ```
     3. Authorize <br/>
         https://stackoverflow.com/questions/17594939/check-if-current-user-is-the-owner-of-a-resource-and-allow-edit-delete-actions/57279448#57279448 <br/>
-        Insert ```is_owner_object``` code into Controller
-        ```ruby
-          class PostsController < ApplicationController
-            before_action :authorize_request
-            before_action only: [:edit, :update, :destroy] do
-                is_owner_object @post ##your object
-            end
-            //...other code
-          end
-        ```
+        1. Insert ```is_owner_object``` code into Controller <br/>
+        2. Append ```merge(user_id: @current_user.id)``` to post_params method
+            ```ruby
+              class PostsController < ApplicationController
+                before_action :authorize_request
+                before_action :set_post, only: [:show, :update, :destroy]
+                before_action only: [:edit, :update, :destroy] do
+                  is_owner_object @post ##your object
+                end
+         
+                //...other code
+                
+                def post_params
+                    params.require(:post).permit(:body).merge(user_id: @current_user.id)
+                end
+              end
+            ```
+    4. Test with CURL
+        1. Create
+            ```bash
+               curl  -X POST -i http://localhost:3000/posts -d '{"post": {"body":"sample body text sample"}}' -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NzcyMzY1NTJ9.0pRv-wnQPdQd1WoaA5mSPDWagfGCk---kwO7pSmKkUg"
+            ```
+        2. Index
+            ```bash
+               curl -X GET -i http://localhost:3000/posts -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1NzcyMzY1NTJ9.0pRv-wnQPdQd1WoaA5mSPDWagfGCk---kwO7pSmKkUg"
+            ```
         
 
 ## Contribute
