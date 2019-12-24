@@ -6,6 +6,7 @@ https://guides.rubyonrails.org/generators.html#creating-generators-with-generato
 https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248 <br/>
 
 ## Require
+* rails api only project ```rails new my_api --api```
 * You don't have User Model, It will generate User Model
 * 'rails', '~> 3.2.0'
 
@@ -28,7 +29,7 @@ https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248 <br/>
 3. Endpoint
     1. Create User
         ```bash
-          curl -d '{"name":"ChangWoo", "username":"helloworld", "email":"x1wins@changwoo.org", "password":"hello1234", "password_confirmation":"hello1234"}' -H "Content-Type: application/json" -X POST -i http://localhost:3000/users
+          curl -d '{"user": {"name":"ChangWoo", "username":"helloworld", "email":"x1wins@changwoo.org", "password":"hello1234", "password_confirmation":"hello1234"}}' -H "Content-Type: application/json" -X POST -i http://localhost:3000/users
         ```
     2. Login
         ```bash
