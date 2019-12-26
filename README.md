@@ -58,13 +58,13 @@ https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248 <br/>
         ```bash
           rails g scaffold post body:string user:references published:boolean
         ```
-    2. model serierize
+    2. model serierize <br/>
         https://itnext.io/a-quickstart-guide-to-using-serializer-with-your-ruby-on-rails-api-d5052dea52c5 <br/>
-        Gemfile
+        1. Gemfile
             ```bash
                gem 'active_model_serializers'
             ```
-        Command
+        2. Command
             ```bash
                rails g serializer user name:string username:string email:string
                rails g serializer post body:string user:references published:boolean
