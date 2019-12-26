@@ -58,6 +58,17 @@ https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248 <br/>
         ```bash
           rails g scaffold post body:string user:references published:boolean
         ```
+    2. model serierize
+        https://itnext.io/a-quickstart-guide-to-using-serializer-with-your-ruby-on-rails-api-d5052dea52c5 <br/>
+        Gemfile
+            ```bash
+               gem 'active_model_serializers'
+            ```
+        Command
+            ```bash
+               rails g serializer user name:string username:string email:string
+               rails g serializer post body:string user:references published:boolean
+            ```        
     2. Authenticate <br/>
         Insert ```before_action :authorize_request``` code into Controller
         ```ruby
